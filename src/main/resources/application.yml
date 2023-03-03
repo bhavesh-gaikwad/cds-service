@@ -1,0 +1,23 @@
+server:
+  port: '8000'
+
+spring:
+  application:
+    name: cds-service
+
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  datasource:
+    name: cds
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/cds
+
