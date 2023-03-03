@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "8fdc2192-9420-40ad-92cd-f526715dd3a0",
+		"name": "CDS-Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get cds-services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/v1/cds-services",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"cds-services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Select Patient Greeting",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"hookInstance\": \"473c36e5-f304-49f6-bb63-a9c7a7f681d9\",\n    \"hook\": \"patient-view\",\n    \"fhirServer\": \"https://launch.smarthealthit.org/v/r2/fhir\",\n    \"context\": {\n        \"patientId\": \"smart-1288992\",\n        \"userId\": \"Practitioner/COREPRACTITIONER1\"\n    },\n    \"prefetch\": {\n        \"patient\": {\n            \"resourceType\": \"Patient\",\n            \"id\": \"smart-1288992\",\n            \"meta\": {\n                \"versionId\": \"634\",\n                \"lastUpdated\": \"2021-05-12T02:30:37.942-04:00\",\n                \"tag\": [\n                    {\n                        \"system\": \"https://smarthealthit.org/tags\",\n                        \"code\": \"smart-8-2017\"\n                    }\n                ]\n            },\n            \"text\": {\n                \"status\": \"generated\",\n                \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\"> <p> Daniel Adams </p> </div>\"\n            },\n            \"identifier\": [\n                {\n                    \"use\": \"usual\",\n                    \"type\": {\n\n                        \"text\": \"Medical record number\"\n                    },\n                    \"system\": \"http://hospital.smarthealthit.org\",\n                    \"value\": \"1288992\"\n                }\n            ],\n            \"active\": true,\n            \"name\": [\n                {\n                    \"use\": \"official\",\n                    \"family\": [\n                        \"Adams\"\n                    ],\n                    \"given\": [\n                        \"Your Name here!\",\n                        \"X.\"\n                    ]\n                }\n            ],\n            \"telecom\": [\n                {\n                    \"system\": \"email\",\n                    \"value\": \"daniel.adams@example.com\"\n                }\n            ],\n            \"gender\": \"male\",\n            \"birthDate\": \"1929-08-16\",\n            \"address\": [\n                {\n                    \"use\": \"home\",\n                    \"line\": [\n                        \"1 Hill AveApt 14\"\n                    ],\n                    \"city\": \"Tulsa\",\n                    \"state\": \"OK\",\n                    \"postalCode\": \"74117\",\n                    \"country\": \"USA\"\n                }\n            ]\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/cds-services/patient-greeting",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"cds-services",
+						"patient-greeting"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
